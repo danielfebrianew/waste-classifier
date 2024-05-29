@@ -34,6 +34,13 @@ const Waste = db.define('waste', {
         validate: {
             notEmpty: true,
         }
+    },
+    processing: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
     }
 }, {
     freezeTableName: true

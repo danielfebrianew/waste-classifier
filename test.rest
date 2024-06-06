@@ -3,6 +3,10 @@
 GET http://localhost:5000/waste
 
 ###
+# GET Wastes
+GET http://localhost:5000/waste/1
+
+###
 # POST Wastes
 POST http://localhost:5000/waste
 Content-Type: application/json

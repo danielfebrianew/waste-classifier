@@ -11,6 +11,17 @@ export const getAllWastes = async (req, res) => {
     }
 }
 
+export const getWaste = async (req, res) => {
+    try {
+        const response = await Waste.findOne({
+            attributes: ['id', 'name', 'description', 'management', 'processing']
+        });
+        res.status(200).json(response);
+    } catch (error) {
+        console.log({ msg: error.message });
+    }
+}
+
 export const addWaste = async (req, res) => {
     const { name, description, management, processing } = req.body;
 

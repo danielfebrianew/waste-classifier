@@ -4,7 +4,8 @@ GET http://localhost:5000/waste
 
 ###
 # GET Wastes
-GET http://localhost:5000/waste/2
+GET http://localhost:5000/waste/3
+
 
 ###
 # POST Wastes

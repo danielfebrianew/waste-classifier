@@ -14,7 +14,10 @@ export const getAllWastes = async (req, res) => {
 export const getWaste = async (req, res) => {
     try {
         const response = await Waste.findOne({
-            attributes: ['id', 'name', 'description', 'management', 'processing']
+            attributes: ['id', 'name', 'description', 'management', 'processing'],
+            where: {
+                id: req.params.id
+            }
         });
         res.status(200).json(response);
     } catch (error) {
@@ -27,8 +30,8 @@ export const addWaste = async (req, res) => {
 
     try {
         const waste = await Waste.create({
-            name: name, 
-            description: description, 
+            name: name,
+            description: description,
             management: management,
             processing: processing
         });

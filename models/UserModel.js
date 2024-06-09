@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 
-const {DataTypes} = Sequelize;
+const { DataTypes } = Sequelize;
 
 const Users = db.define('users',{
     uuid:{
@@ -47,3 +47,12 @@ const Users = db.define('users',{
 });
 
 export default Users;
+
+(async () => { 
+    try {
+        await db.sync();
+        console.log("Database synchronized");
+    } catch (error) {
+        console.error("Error synchronizing database:", error);
+    }
+})();
